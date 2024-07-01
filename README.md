@@ -1,4 +1,31 @@
 # Grover
+## Discrimination experiments on GossipCop-LLM dataset
+With all the datasets and pre-trained models downloaded, we can conduct the machine generated fake news discrimiation experiment by runing the following commands:
+
+Discrimination on `Style-based Fake` dataset's human written part using `mega` sized model
+```bash
+python ./discrimination/run_discrimination.py --input_data=./gossipcop/datasource/output_all_test_1_human.jsonl --output_dir=./discrimination/results/mega/ --config_file=./lm/configs/mega.json --predict_test=True
+```
+
+Discrimination on `Style-based Fake` dataset's human generated part using `mega` sized model
+```bash
+python ./discrimination/run_discrimination.py --input_data=./gossipcop/datasource/output_all_test_1_machine.jsonl --output_dir=./discrimination/results/mega/ --config_file=./lm/configs/mega.json --predict_test=True
+```
+
+After preforming the above experiments, we can process the experiment results in `test_result_process.ipynb`, converting the prediction probility `.npy` files into metrics value. By doing so, the following statistics is obtained.
+
+Table 1. Statistics of Grover mega discriminator performing machine generated fake news on GossipCop-LLM v3 Style-based Fake dataset.
+| Metrics                                 | Value  |
+|-----------------------------------------|--------|
+| Overall accuracy                        | 77.4%  |
+| Accuracy of human legitimate news       | 82.0%  |
+| Accuracy of Machine generated fake news | 62.8%  |
+| Precision                               | 79.0%  |
+| Recall                                  | 77.4%  |
+| F1-score                                | 78.0%  |
+
+---
+
 ##### UPDATE, Sept 17 2019. We got into NeurIPS (camera ready coming soon!) and we've made Grover-Mega publicly available without you needing to fill out the form. You can download it using [download_model.py](download_model.py).
 
 (aka, code for [Defending Against Neural Fake News](https://arxiv.org/abs/1905.12616))
