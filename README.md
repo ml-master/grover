@@ -12,7 +12,7 @@ Discrimination on `Style-based Fake` dataset's machine generated part using `meg
 python ./discrimination/run_discrimination.py --input_data=./gossipcop/datasource/output_all_test_1_machine.jsonl --output_dir=./discrimination/results/mega/ --config_file=./lm/configs/mega.json --predict_test=True
 ```
 
-After preforming the above experiments, we can process the experiment results in `test_result_process.ipynb`, converting the prediction probility `.npy` files into metrics value. By doing so, the following statistics is obtained.
+After performing the above experiments, we can process the experiment results in `test_result_process.ipynb`, converting the prediction probility `.npy` files into metrics value. By doing so, the following statistics is obtained.
 
 Table 1. Statistics of Grover mega discriminator performing machine generated fake news on GossipCop-LLM v3 Style-based Fake dataset.
 | Metrics                                 | Value  |
