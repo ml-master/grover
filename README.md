@@ -7,7 +7,7 @@ Discrimination on `Style-based Fake` dataset's human written part using `mega` s
 python ./discrimination/run_discrimination.py --input_data=./gossipcop/datasource/output_all_test_1_human.jsonl --output_dir=./discrimination/results/mega/ --config_file=./lm/configs/mega.json --predict_test=True
 ```
 
-Discrimination on `Style-based Fake` dataset's human generated part using `mega` sized model
+Discrimination on `Style-based Fake` dataset's machine generated part using `mega` sized model
 ```bash
 python ./discrimination/run_discrimination.py --input_data=./gossipcop/datasource/output_all_test_1_machine.jsonl --output_dir=./discrimination/results/mega/ --config_file=./lm/configs/mega.json --predict_test=True
 ```
